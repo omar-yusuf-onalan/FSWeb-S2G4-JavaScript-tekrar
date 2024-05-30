@@ -50,8 +50,8 @@ function KareninAlani(kenaruzunlugu) {
 	4. Hesaplanan çemberin çevresi döndürülecektir.
 */
 
-function CemberinCevresi(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinCevresi(yaricap) {
+  return 2 * pi * yaricap;
 }
 
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
@@ -64,8 +64,8 @@ function CemberinCevresi(/* kodlar buraya */) {
 	4. Hesaplanan çemberin alanı döndürülecektir.
 */
 
-function CemberinAlani(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinAlani(yaricap) {
+  return pi * Math.pow(yaricap, 2);
 }
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
@@ -99,29 +99,74 @@ let ucetambolunenler,
 
 // 3a çözümü
 
-/* kodlar buraya */
+function enKucukEnBuyukBul() {
+  enKucuk = sayilar[0];
+  enBuyuk = sayilar[0];
+
+  for (let i = 0; i < sayilar.length; i++) {
+    if (sayilar[i] < enKucuk) {
+      enKucuk = sayilar[i];
+    }
+
+    if (sayilar[i] > enBuyuk) {
+      enBuyuk = sayilar[i];
+    }
+
+  }
+}
 
 // 3b çözümü:
 
-/* kodlar buraya */
+function uceTamBolunenler() {
+  const arr = [];
+  sayilar.forEach(sayi => {
+    if (sayi % 3 === 0)
+      arr.push(sayi);
+  })
+
+  return arr;
+}
 
 // 3c çözümü:
 
-/* kodlar buraya */
+function uceTamBolunenlerinToplami() {
+  const arr = uceTamBolunenler();
+  ucebolunenlerintoplami = arr.reduce((toplam, item) => toplam += item, 0);
+}
 
 // 3d çözümü
 
-/* kodlar buraya */
+function beseTamBolunenler() {
+  const arr = sayilar.filter(sayi => sayi % 5 ===0);
+}
 
 // 3e çözümü
 
-/* kodlar buraya */
+function sayilariSirala() {
+  sayilar.sort((a, b) => a - b);
+  siraliSayilar = sayilar;
+}
 
 // 3f çözümü
 
-/* kodlar buraya */
+function tekrarEdenSayilar() {
+  let currentNumber;
+  let counter = 0;
 
-/*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
+  sayilar.sort((a, b) => a - b);
+
+  for (let i = 0; i < sayilar.length; i++) {
+    if (currentNumber === sayilar[i]) {
+      counter++;
+    } else {
+      tekraredensayilar.push(`${currentNumber} sayısı ${counter} tekrar edilmiştir`);
+
+      currentNumber = sayilar[i];
+    }
+  }
+}
+/*  Bu satırın aşağısındaki ko
+dları lütfen değiştirmeyin  */
 
 function sa() {
   console.log("Kodlar çalışıyor");
